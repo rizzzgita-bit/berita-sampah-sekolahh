@@ -1,0 +1,553 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suara Sekolah | Berita Lingkungan</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #f5f2e9;
+  --paper: #fffdf7;
+  --green: #263d2b;
+  --sage: #7b8b70;
+  --muted: #657064;
+  --line: #dedfd3;
+  --orange: #d4774d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--green);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.topline {
+  height: 7px;
+  background: var(--orange);
+}
+
+header {
+  max-width: 1120px;
+  margin: auto;
+  padding: 22px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.brand {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.brand span { color: var(--orange); }
+
+nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+nav a:hover { color: var(--orange); }
+
+.hero {
+  max-width: 1120px;
+  margin: auto;
+  padding: 50px 6% 60px;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.eyebrow,
+.section-kicker {
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 11px;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(36px, 5vw, 62px);
+  line-height: 1.08;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin-bottom: 22px;
+}
+
+.hero-copy {
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.meta {
+  margin-top: 20px;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 26px;
+  background: var(--green);
+  color: white;
+  padding: 13px 20px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.photo-wrap { position: relative; }
+
+.photo-wrap img {
+  width: 100%;
+  aspect-ratio: 4 / 4.5;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+  background: #d8ded1;
+}
+
+.photo-caption {
+  font-size: 11px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+.photo-note {
+  position: absolute;
+  bottom: 40px;
+  left: -15px;
+  background: var(--orange);
+  color: white;
+  padding: 13px 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  max-width: 190px;
+  line-height: 1.5;
+}
+
+.ticker {
+  background: var(--green);
+  color: var(--paper);
+  padding: 12px 6%;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.content {
+  max-width: 900px;
+  margin: auto;
+  padding: 70px 6%;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(27px, 4vw, 39px);
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin-bottom: 24px;
+}
+
+.article {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: clamp(22px, 5vw, 45px);
+}
+
+.article p {
+  margin-bottom: 18px;
+  color: #424d41;
+  font-size: 15px;
+  line-height: 1.95;
+}
+
+.article p:last-child { margin-bottom: 0; }
+
+.quote {
+  border-left: 4px solid var(--orange);
+  padding: 14px 18px;
+  margin: 26px 0;
+  background: #f4eee2;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.adiksimba-section {
+  background: #e9ede2;
+  padding: 70px 6%;
+}
+
+.inner {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.section-desc {
+  color: var(--muted);
+  max-width: 600px;
+  margin: -10px 0 30px;
+}
+
+.adiksimba-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.adiksimba-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 24px;
+  border-radius: 4px;
+}
+
+.adiksimba-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--orange);
+}
+
+.adiksimba-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.4;
+  margin: 10px 0;
+}
+
+.adiksimba-card p {
+  font-size: 14px;
+  line-height: 1.85;
+  color: #50594d;
+}
+
+.callout {
+  margin-top: 28px;
+  padding: 24px;
+  background: var(--green);
+  color: white;
+}
+
+.callout h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.callout p {
+  color: #edf0e8;
+  font-size: 14px;
+}
+
+.about {
+  max-width: 900px;
+  margin: auto;
+  padding: 65px 6%;
+}
+
+.about-box {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.about-box p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+footer {
+  background: var(--green);
+  color: white;
+  padding: 28px 6%;
+  text-align: center;
+  font-size: 12px;
+}
+
+footer strong {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+}
+
+@media (max-width: 720px) {
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  nav { gap: 15px; }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 35px;
+    gap: 30px;
+  }
+
+  .photo-note { left: -5px; }
+
+  .adiksimba-grid,
+  .about-box {
+    grid-template-columns: 1fr;
+  }
+
+  .content,
+  .adiksimba-section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="topline"></div>
+
+<header>
+  <a class="brand" href="#beranda">SUARA<span>.</span>SEKOLAH</a>
+  <nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#berita">Berita</a>
+    <a href="#adiksimba">ADIKSIMBA</a>
+    <a href="#tentang">Tentang</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="beranda">
+  <div>
+    <div class="eyebrow">Laporan Lingkungan · Sukaraja</div>
+
+    <h1>Sampah Menyebar, Kepedulian Warga Sekolah Dipertanyakan</h1>
+
+    <p class="hero-copy">
+      Sampah yang tidak dipilah dan masih berserakan menjadi persoalan
+      kebersihan di lingkungan sekolah. Kebiasaan sederhana perlu
+      diperbaiki agar lingkungan belajar tetap bersih dan nyaman.
+    </p>
+
+    <p class="meta">Wawancara Pak Didin · 21 Oktober 2026</p>
+
+    <a class="button" href="#berita">Baca Berita ↘</a>
+  </div>
+
+  <div class="photo-wrap">
+    <!-- GANTI URL FOTO DI BAWAH DENGAN LINK FOTO KAMU -->
+    <img
+      src="https://i.ibb.co.com/Sq5g9ry/file-00000000a1448211bb555e8ffd8253cf.png"
+      alt="Ilustrasi sampah dan kebersihan lingkungan"
+    >
+    <div class="photo-note">
+      LINGKUNGAN BERSIH DIMULAI DARI KEBIASAAN KECIL
+    </div>
+    <p class="photo-caption">
+      Ilustrasi sampah.
+    </p>
+  </div>
+</section>
+
+<div class="ticker">
+  Peduli lingkungan · Pilah sampah · Jaga sekolah tetap bersih
+</div>
+
+<section class="content" id="berita">
+  <div class="section-kicker">Laporan Utama</div>
+  <h2>Masalah yang Terlihat Setiap Hari</h2>
+
+  <article class="article">
+    <p>
+      <strong>SUKARAJA</strong> — Permasalahan sampah yang tidak dipilah
+      dan masih berserakan menjadi salah satu persoalan kebersihan
+      di lingkungan sekolah. Berdasarkan wawancara dengan Pak Didin
+      pada 21 Oktober 2026, sampah masih ditemukan setiap hari dan
+      belum dipisahkan dengan baik berdasarkan jenisnya.
+    </p>
+
+    <p>
+      Menurut Pak Didin, lokasi yang paling banyak ditemukan sampah
+      berserakan berada di belakang kelas XII.4, XII.5, dan XII.6.
+      Kondisi tersebut menunjukkan bahwa kebiasaan membuang sampah
+      pada tempatnya masih perlu ditingkatkan.
+    </p>
+
+    <p>
+      Sampah yang ditemukan terdiri atas sampah organik, seperti
+      sisa makanan, serta sampah anorganik, seperti plastik.
+      Pak Didin menyebutkan bahwa sampah plastik menjadi jenis
+      yang paling banyak dibandingkan sampah organik.
+    </p>
+
+    <div class="quote">
+      “Jangan jajan sembarangan. Kalau jajan, sampahnya dibuang
+      dengan rapi ke tempat sampah dan dipilah.”
+    </div>
+
+    <p>
+      Pesan tersebut menekankan pentingnya tanggung jawab setiap
+      warga sekolah dalam menjaga kebersihan. Sampah sebaiknya
+      dibuang ke tempat yang sesuai dan dipisahkan berdasarkan
+      jenisnya agar tidak tercampur.
+    </p>
+
+    <p>
+      Upaya menjaga lingkungan sekolah dapat dimulai dari tindakan
+      sederhana, seperti tidak meninggalkan sampah setelah makan
+      serta membiasakan memilah sampah. Jika dilakukan bersama-sama,
+      lingkungan sekolah dapat menjadi lebih bersih dan nyaman.
+    </p>
+  </article>
+</section>
+
+<section class="adiksimba-section" id="adiksimba">
+<div class="inner">
+  <div class="section-kicker">Hasil Wawancara</div>
+  <h2>Permasalahan Sampah dalam ADIKSIMBA</h2>
+
+  <p class="section-desc">
+    Enam pertanyaan utama untuk memahami masalah sampah di lingkungan
+    sekolah berdasarkan keterangan Pak Didin.
+  </p>
+
+  <div class="adiksimba-grid">
+
+    <article class="adiksimba-card">
+      <span class="adiksimba-label">APA</span>
+      <h3>Apa permasalahannya?</h3>
+      <p>
+        Sampah di lingkungan sekolah masih belum dipilah dengan baik.
+        Sampah organik, seperti sisa makanan, dan sampah anorganik,
+        seperti plastik, masih tercampur. Menurut Pak Didin, sampah
+        plastik menjadi jenis yang paling banyak ditemukan.
+      </p>
+    </article>
+
+    <article class="adiksimba-card">
+      <span class="adiksimba-label">DI MANA</span>
+      <h3>Di mana lokasinya?</h3>
+      <p>
+        Sampah paling banyak ditemukan di belakang kelas XII.4,
+        XII.5, dan XII.6.
+      </p>
+    </article>
+
+    <article class="adiksimba-card">
+      <span class="adiksimba-label">KAPAN</span>
+      <h3>Kapan terjadi?</h3>
+      <p>
+        Menurut keterangan Pak Didin, sampah ditemukan setiap hari
+        di lingkungan sekolah.
+      </p>
+    </article>
+
+    <article class="adiksimba-card">
+      <span class="adiksimba-label">SIAPA</span>
+      <h3>Siapa yang berkaitan?</h3>
+      <p>
+        Warga sekolah yang membuang sampah sembarangan atau tidak
+        memilah sampah berkaitan dengan permasalahan ini. Pak Didin
+        mengkritik kebiasaan tersebut karena menunjukkan kurangnya
+        kepedulian terhadap kebersihan.
+      </p>
+    </article>
+
+    <article class="adiksimba-card">
+      <span class="adiksimba-label">MENGAPA</span>
+      <h3>Mengapa hal ini terjadi?</h3>
+      <p>
+        Pak Didin menilai sampah tidak terpilah karena masih ada
+        orang yang kurang peduli terhadap kebersihan dan tidak
+        memisahkan sampah sesuai jenisnya.
+      </p>
+    </article>
+
+    <article class="adiksimba-card">
+      <span class="adiksimba-label">BAGAIMANA</span>
+      <h3>Bagaimana solusinya?</h3>
+      <p>
+        Siswa diimbau untuk tidak jajan sembarangan serta membuang
+        sampah dengan rapi ke tempat sampah dan memilahnya
+        sesuai jenisnya.
+      </p>
+    </article>
+
+  </div>
+
+  <div class="callout">
+    <h3>Mulai dari diri sendiri</h3>
+    <p>
+      Jangan tinggalkan sampah setelah jajan. Buang pada tempatnya
+      dan pilah sesuai jenisnya. Kebiasaan kecil yang dilakukan
+      bersama dapat membantu menjaga kebersihan sekolah.
+    </p>
+  </div>
+</div>
+</section>
+
+<section class="about" id="tentang">
+  <div class="section-kicker">Tentang Liputan</div>
+  <h2>Suara Sekolah</h2>
+
+  <div class="about-box">
+    <p>
+      Halaman berita ini dibuat untuk tugas Bahasa Indonesia mengenai
+      permasalahan sampah di lingkungan sekolah, dengan informasi
+      yang dirangkum dari wawancara dengan Pak Didin.
+    </p>
+
+    <p>
+      <strong>Disusun oleh:</strong> Kelas XI.1<br>
+      <strong>Sekolah:</strong> SMAN 1 SUKARAJA<br>
+      <strong>Tanggal wawancara:</strong> 21 Oktober 2026
+    </p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <strong>SUARA SEKOLAH</strong><br>
+  Informasi dari lingkungan kita, untuk kepedulian bersama.
+</footer>
+
+</body>
+</html>
